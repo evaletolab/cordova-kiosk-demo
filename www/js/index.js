@@ -34,9 +34,14 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        //
+        // allow volumne +/- and power 
+        // -- > https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_POWER
+        KioskActivity.kioskModeEnabled = false;
+        KioskPlugin.setAllowedKeys([ 24, 25, 26 ]);
     },
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+    receivedEvent: function(id, elem) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -44,7 +49,7 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+        console.log('Received Event: ' + id + ' -- ' + elem);
     }
 };
 
