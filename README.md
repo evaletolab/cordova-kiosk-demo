@@ -1,21 +1,32 @@
-Cordova Kiosk App Demo
+Video Player Kiosk App 
 ======================
 
 This example use **cordova-plugin-kiosk** - see https://github.com/hkalina/cordova-plugin-kiosk
 
-To run this demo app after checkout:
+FEATURES
+--------
+
+* play video from start on load ("deviceready" event)
+* play video from start on "resume" event
+* play local video (offline player)
+* sound level control on right side of the screen
+* brightness level control on left side of the screen
+* replace local file with new video
+
+NOT AVAILABLE
+-------------
+* ability to control the hardware buttons behavior
+
+
+INITIAL SETUP
 ------------------------------------
 
-    cordova prepare
+    cordova plugin add cordova-plugin-kiosk
+    cordova plugin add cordova-plugin-brightness
+    cordova plugin add cordova-plugin-file
+
     ANDROID_HOME=/opt/android-sdk cordova run
 
-To create new similar app:
---------------------------
-
-    cordova create cordova-kiosk-demo jk.cordova.kioskdemo CordovaKioskDemo
-    cd cordova-kiosk-demo
-    cordova plugin add https://github.com/hkalina/cordova-plugin-kiosk.git
-    ANDROID_HOME=/opt/android-sdk cordova run
 
 To remove app from device use adb:
 ----------------------------------
