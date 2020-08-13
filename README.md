@@ -6,12 +6,13 @@ This example use **cordova-plugin-kiosk** - see https://github.com/hkalina/cordo
 FEATURES
 --------
 
-* play video from start on load ("deviceready" event)
-* play video from start on "resume" event
-* play local video (offline player)
+* play video from start on "deviceready" event.
+* play video from start on "resume" event.
+* dafficher une liste de lecture avec des miniatures lorsque la vidéo est terminée.
+* videos assets are installed localy (available offline)
 * sound level control on right side of the screen
 * brightness level control on left side of the screen
-* replace local file with new video
+* replace local file with new video (optional)
 
 NOT AVAILABLE
 -------------
