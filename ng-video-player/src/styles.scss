@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Source Code Pro', monospace;
+  color: rgba(#000000, 0.8);
+  background-color: #161616;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 8px;
+    height: 175px;
+    padding: 0 5px;
+}

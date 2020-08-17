@@ -1,0 +1,94 @@
+@import '~video.js/dist/video-js.css';
+
+video,
+.video-js{
+  width: 100vw;
+}
+
+.playlist{
+  z-index: -1;
+  opacity: 0;
+  position: fixed;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  >div{
+    margin: auto;    
+  }
+
+  &.fade-in{
+    z-index: 1;
+  }
+}
+
+.volume,
+.brightness {
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom: 0;
+  width: 20vw;
+  z-index: 1;
+  opacity: 0;
+  .value{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    opacity: .6;
+    background-image: linear-gradient(to right bottom, #00ffff, #03a9f4);
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    z-index: -1;
+  }
+
+  .range-output {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    font-weight: 900;
+    font-size: 8vmax;
+    user-select: none;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.58);
+    text-shadow: rgba(0,0,0,.3) 1px 0 18px;    top: 40%;
+    top: 40%;
+    &:after {
+      content: '%';
+    }
+  }
+  
+}
+
+.volume{
+  right: 0;
+  left: initial;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
