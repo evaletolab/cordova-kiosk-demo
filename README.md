@@ -18,8 +18,13 @@ NOT AVAILABLE
 -------------
 * ability to control the hardware buttons behavior
 
+NG SETUP
+------------------------------------
+    cd ng-video-player
+    npm i
+    ng serve
 
-INITIAL SETUP
+CORDOVA SETUP
 ------------------------------------
 
     cordova plugin add cordova-plugin-kiosk
