@@ -18,7 +18,7 @@ NOT AVAILABLE
 -------------
 * ability to control the hardware buttons behavior
 
-NG SETUP
+NG SETUP (PLAYER EXPERIMENT)
 ------------------------------------
     cd ng-video-player
     npm i
