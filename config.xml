@@ -26,4 +26,8 @@
     </platform>
     <plugin name="cordova-plugin-kiosk" spec="https://github.com/hkalina/cordova-plugin-kiosk.git" />
     <engine name="android" spec="7.0.0" />
+    <preference name="Orientation" value="landscape"/>
+    <preference name="AndroidLaunchMode" value="singleTop"/>
+    <preference name="SetFullscreen" value="true"/>
+
 </widget>

@@ -1,7 +1,5 @@
 import { Component, ViewChild, ElementRef, ViewEncapsulation, Input, OnInit, OnDestroy } from '@angular/core';
-import videojs from 'video.js';
 
-declare var cordova: any;
 
 @Component({
   selector: 'app-root',
@@ -18,13 +16,14 @@ export class AppComponent implements OnInit,OnDestroy {
   showRight: boolean;
   showPlayList: boolean;
 
-  player: videojs.Player;
+  // player: videojs.Player;
   brightness: number;
   volume: number;
   updatedScreen: boolean;
 
   private _brigthness: any;
   private _cordova: any;
+  private _KioskPlugin: any;
 
   constructor(
     private elementRef: ElementRef,
@@ -33,7 +32,12 @@ export class AppComponent implements OnInit,OnDestroy {
     this.volume = 0;
     this._cordova = window['cordova'];
     this._brigthness = {
-      setBrightness : () => {}
+      setBrightness : () => {},
+      getBrightness: () => {}
+    };
+
+    this._KioskPlugin = {
+      exitKiosk: () => {}
     };
 
     //
@@ -41,7 +45,11 @@ export class AppComponent implements OnInit,OnDestroy {
     if (!this._cordova) {
       return;
     }
-    this._brigthness = this._cordova.plugins.brightness;
+    // this._brigthness = this._cordova.plugins.brightness;
+
+    //
+    // attach cordova KioskPlugin
+    this._KioskPlugin = window['KioskPlugin'] || this._KioskPlugin;
   }
 
   ngOnInit() {
@@ -64,9 +72,13 @@ export class AppComponent implements OnInit,OnDestroy {
 
   ngOnDestroy() {
     // destroy player
-    if (this.player) {
-      this.player.dispose();
-    }
+    // if (this.player) {
+    //   this.player.dispose();
+    // }
+  }
+
+  onExitKiosk() {
+    this._KioskPlugin.exitKiosk();
   }
 
   onVideoEnd($event) {

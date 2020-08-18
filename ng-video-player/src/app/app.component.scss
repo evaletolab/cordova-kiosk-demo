@@ -1,8 +1,17 @@
-@import '~video.js/dist/video-js.css';
+//@import '~video.js/dist/video-js.css';
 
 video,
 .video-js{
   width: 100vw;
+}
+
+.exit-button {
+  position: fixed;
+  z-index: 100;
+  bottom: 10px;
+  width: 50px;
+  height: 20px;
+  right: 37%;
 }
 
 .playlist{

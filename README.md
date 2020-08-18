@@ -34,6 +34,10 @@ CORDOVA SETUP
     ANDROID_HOME=/opt/android-sdk cordova run
 
 
+CORDOVA LOGCAT
+------------------------------------
+    adb logcat chromium:D SystemWebViewClient:D *:S
+
 To remove app from device use adb:
 ----------------------------------
 
